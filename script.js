@@ -17,15 +17,12 @@ var groceryList = [
 	}
 ];
 
-for(var i = 0; i < groceryList.length; i++) {
-	console.log(groceryList[i].name, "$"+groceryList[i].price);
-};
-
-groceryList.totalAmount = function(){
+groceryList.makeList = function() {
 	var total = 0;
-		for (var i = 0; i < groceryList.length; i++) {
-			total += groceryList[i].price;
-		}
+	for(var i = 0; i < groceryList.length; i++) {
+		console.log(groceryList[i].name, "$"+groceryList[i].price.toFixed(2));
+		total += groceryList[i].price;
+	}
 	return total;
 };
-console.log("$"+groceryList.totalAmount());
+console.log("Total: $"+groceryList.makeList().toFixed(2));
